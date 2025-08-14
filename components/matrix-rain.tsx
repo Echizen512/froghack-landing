@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,7 +9,7 @@ export default function MatrixRain() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const resizeCanvas = () => {
@@ -18,11 +18,11 @@ export default function MatrixRain() {
     };
 
     resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
 
     // Solo 0 y 1
-    const chars = "01";
-    const charArray = chars.split("");
+    const chars = '01';
+    const charArray = chars.split('');
 
     const fontSize = 14;
     const columns = Math.floor(canvas.width / fontSize);
@@ -30,10 +30,10 @@ export default function MatrixRain() {
     const drops: number[] = Array(columns).fill(1);
 
     const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#00ff41";
+      ctx.fillStyle = '#00ff41';
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -52,11 +52,15 @@ export default function MatrixRain() {
 
     return () => {
       clearInterval(interval);
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
 
   return (
-    <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-20" style={{ pointerEvents: "none" }} />
+    <canvas
+      ref={canvasRef}
+      className='absolute inset-0 w-full h-full opacity-20'
+      style={{ pointerEvents: 'none' }}
+    />
   );
 }

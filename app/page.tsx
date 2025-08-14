@@ -5,7 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import MatrixRain from '@/components/matrix-rain';
 import Image from 'next/image';
+import { CharacterSection } from '@/components/CharacterSection';
+
 export default function FrogHackLanding() {
+  //states
   const [currentCharacter, setCurrentCharacter] = useState(0);
   const [glitchText, setGlitchText] = useState('FROGHACK');
 
@@ -53,17 +56,15 @@ export default function FrogHackLanding() {
     },
   ];
 
-const [isDressed, setIsDressed] = useState(false);
+  const [isDressed, setIsDressed] = useState(false);
 
-
-const floatingAccessories = [
-  { name: 'Mask', image: '/Mask2.png', top: '10%', left: '75%' },    
-  { name: 'Cape', image: '/Capes.png', top: '10%', left: '-15%' },   
-  { name: 'Boots', image: '/Boots.png', top: '80%', left: '-15%' },  
-  { name: 'Cell', image: '/Cell.png', top: '70%', left: '75%' },   
-  { name: 'Pants', image: '/Pants.png', top: '40%', left: '80%' }, 
-];
-
+  const floatingAccessories = [
+    { name: 'Mask', image: '/Mask2.png', top: '10%', left: '75%' },
+    { name: 'Cape', image: '/Capes.png', top: '10%', left: '-15%' },
+    { name: 'Boots', image: '/Boots.png', top: '80%', left: '-15%' },
+    { name: 'Cell', image: '/Cell.png', top: '70%', left: '75%' },
+    { name: 'Pants', image: '/Pants.png', top: '40%', left: '80%' },
+  ];
 
   const handleDressUp = () => {
     setIsDressed(true);
@@ -122,7 +123,8 @@ const floatingAccessories = [
 
           <div className='mb-8 p-6 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
             <p className='text-xl md:text-2xl leading-relaxed'>
-              FrogHack is next-gen gaming: P2E and idle merged into one ecosystem. On the FrogChain, frogs reign with power and mystery.
+              FrogHack is next-gen gaming: P2E and idle merged into one
+              ecosystem. On the FrogChain, frogs reign with power and mystery.
             </p>
           </div>
 
@@ -135,24 +137,30 @@ const floatingAccessories = [
       </section>
 
       {/* Characters Section */}
-      <section className='relative z-10 py-2 px-4 mb-12'>
+      <CharacterSection />
+
+      
+      {/* <section className='relative z-10 py-2 px-4 mb-12'>
         <div className='max-w-6xl mx-auto'>
           <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
             FRO<span className='text-green-400'>GGER</span>
           </h2>
           <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
             <p className='text-xl md:text-2xl leading-relaxed text-center'>
-              Four specialists. One deadly mission. Masters of infiltration, signal sabotage, decryption, and viral warfare—they're FrogHack’s most feared unit. And they're ready to strike.
+              Four specialists. One deadly mission. Masters of infiltration,
+              signal sabotage, decryption, and viral warfare—they're FrogHack’s
+              most feared unit. And they're ready to strike.
             </p>
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {characters.map((char, index) => (
               <Card
                 key={char.name}
-                className={`bg-black/80 border-2 transition-all duration-500 hover:scale-105 cursor-pointer rounded-xl ${index === currentCharacter
-                  ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
-                  : 'border-green-400 hover:border-cyan-400'
-                  }`}
+                className={`bg-black/80 border-2 transition-all duration-500 hover:scale-105 cursor-pointer rounded-xl ${
+                  index === currentCharacter
+                    ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
+                    : 'border-green-400 hover:border-cyan-400'
+                }`}
               >
                 <CardContent className='p-6 text-center'>
                   <div className='mb-4 relative overflow-hidden rounded-xl'>
@@ -161,12 +169,12 @@ const floatingAccessories = [
                         char.name === 'FrogPhantom'
                           ? '/phantomll.png'
                           : char.name === 'FrogRoot'
-                            ? '/frogroott.png'
-                            : char.name === 'FrogBit'
-                              ? '/frogbit.png'
-                              : char.name === 'FrogGrammer'
-                                ? '/FrogGrammer.png'
-                                : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
+                          ? '/frogroott.png'
+                          : char.name === 'FrogBit'
+                          ? '/frogbit.png'
+                          : char.name === 'FrogGrammer'
+                          ? '/FrogGrammer.png'
+                          : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
                       }
                       alt={char.name}
                       style={{
@@ -190,120 +198,123 @@ const floatingAccessories = [
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Accessories Section */}
       <section className='relative z-10 py-2 px-4'>
-      <div className='max-w-6xl mx-auto'>
-        <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
-          ACCE<span className='text-green-400'>SSORIES</span>
-        </h2>
-        <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
-          <p className='text-xl md:text-2xl leading-relaxed text-center'>
-            Each Frogger wields a custom arsenal—dark-piercing visors, viral cores that disrupt entire networks. Their gear is the line between failure and the perfect hack.
-          </p>
-        </div>
+        <div className='max-w-6xl mx-auto'>
+          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
+            ACCE<span className='text-green-400'>SSORIES</span>
+          </h2>
+          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
+            <p className='text-xl md:text-2xl leading-relaxed text-center'>
+              Each Frogger wields a custom arsenal—dark-piercing visors, viral
+              cores that disrupt entire networks. Their gear is the line between
+              failure and the perfect hack.
+            </p>
+          </div>
 
-        {/* Grid de accesorios */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {accessories.map((item) => (
-            <Card
-              key={item.name}
-              className='bg-black/80 border-2 border-green-400 hover:border-cyan-400 hover:scale-105 transition-all duration-300 cursor-pointer rounded-xl'
-            >
-              <CardContent className='p-6 text-center'>
-                <div className='mb-4 relative overflow-hidden rounded-xl'>
-                  <Image
-                    src={
-                      item.name === 'Masks'
-                        ? '/Masks.png'
-                        : item.name === 'Capes'
+          {/* Grid de accesorios */}
+          {/* <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {accessories.map((item) => (
+              <Card
+                key={item.name}
+                className='bg-black/80 border-2 border-green-400 hover:border-cyan-400 hover:scale-105 transition-all duration-300 cursor-pointer rounded-xl'
+              >
+                <CardContent className='p-6 text-center'>
+                  <div className='mb-4 relative overflow-hidden rounded-xl'>
+                    <Image
+                      src={
+                        item.name === 'Masks'
+                          ? '/Masks.png'
+                          : item.name === 'Capes'
                           ? '/Capes.png'
                           : item.name === 'Boots'
-                            ? '/Boots.png'
-                            : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${item.name} frog accessory cyberpunk style`
-                    }
-                    alt={item.name}
-                    width={30}
-                    height={30}
-                    className='w-full h-32 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
+                          ? '/Boots.png'
+                          : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${item.name} frog accessory cyberpunk style`
+                      }
+                      alt={item.name}
+                      width={30}
+                      height={30}
+                      className='w-full h-32 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
+                    />
+                  </div>
+                  <h3 className='text-xl font-bold mb-3 text-green-400'>
+                    {item.name}
+                  </h3>
+                  <p className='text-green-300'>{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div> */}
+
+          <>
+            {/* Mini juego de vestir */}
+            <div className='mt-16 p-6 bg-black/60 border border-green-400 rounded-xl text-center'>
+              <h3 className='text-3xl font-bold text-green-400 mb-4'>
+                Dress Your Frog
+              </h3>
+              <p className='text-green-300 mb-6'>
+                Choose your gear. Watch your frog transform in real time.
+              </p>
+
+              {/* Rana base */}
+              <div className='relative w-64 h-64 mx-auto mb-6'>
+                {!isDressed ? (
+                  <>
+                    <Image
+                      src='/base.png'
+                      alt='Base Frog'
+                      fill
+                      className='object-contain z-0'
+                    />
+
+                    {/* Accesorios flotantes */}
+                    {floatingAccessories.map((acc) => (
+                      <Image
+                        key={acc.name}
+                        src={acc.image}
+                        alt={acc.name}
+                        width={100}
+                        height={100}
+                        className='absolute animate-float transition-opacity duration-500'
+                        style={{
+                          top: acc.top,
+                          left: acc.left,
+                        }}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <Image
+                    src='/frog-equipped.png'
+                    alt='Equipped Frog'
+                    fill
+                    className='object-contain z-10'
                   />
-                </div>
-                <h3 className='text-xl font-bold mb-3 text-green-400'>
-                  {item.name}
-                </h3>
-                <p className='text-green-300'>{item.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+                )}
+              </div>
+
+              {/* Botones */}
+              {!isDressed ? (
+                <button
+                  onClick={handleDressUp}
+                  className='px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-cyan-400 transition-colors'
+                >
+                  Equip Accessories
+                </button>
+              ) : (
+                <button
+                  onClick={() => setIsDressed(false)}
+                  className='px-6 py-2 bg-cyan-400 text-black font-bold rounded hover:bg-green-400 transition-colors'
+                >
+                  Unequip Accessories
+                </button>
+              )}
+            </div>
+          </>
         </div>
-
-       <>
-      {/* Mini juego de vestir */}
-      <div className='mt-16 p-6 bg-black/60 border border-green-400 rounded-xl text-center'>
-        <h3 className='text-3xl font-bold text-green-400 mb-4'>Dress Your Frog</h3>
-        <p className='text-green-300 mb-6'>
-          Choose your gear. Watch your frog transform in real time.
-        </p>
-
-        {/* Rana base */}
-        <div className='relative w-64 h-64 mx-auto mb-6'>
-          {!isDressed ? (
-            <>
-              <Image
-                src='/base.png'
-                alt='Base Frog'
-                fill
-                className='object-contain z-0'
-              />
-
-              {/* Accesorios flotantes */}
-              {floatingAccessories.map((acc) => (
-                <Image
-                  key={acc.name}
-                  src={acc.image}
-                  alt={acc.name}
-                  width={100}
-                  height={100}
-                  className='absolute animate-float transition-opacity duration-500'
-                  style={{
-                    top: acc.top,
-                    left: acc.left,
-                  }}
-                />
-              ))}
-            </>
-          ) : (
-            <Image
-              src='/frog-equipped.png'
-              alt='Equipped Frog'
-              fill
-              className='object-contain z-10'
-            />
-          )}
-        </div>
-
-        {/* Botones */}
-        {!isDressed ? (
-          <button
-            onClick={handleDressUp}
-            className='px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-cyan-400 transition-colors'
-          >
-            Equip Accessories
-          </button>
-        ) : (
-          <button
-            onClick={() => setIsDressed(false)}
-            className='px-6 py-2 bg-cyan-400 text-black font-bold rounded hover:bg-green-400 transition-colors'
-          >
-            Unequip Accessories
-          </button>
-        )}
-      </div>
-    </>
-    </div>
-    </section>
-
+      </section>
 
       {/* Houses Section */}
       <section className='relative z-10 py-20 px-4'>
@@ -313,7 +324,9 @@ const floatingAccessories = [
           </h2>
           <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
             <p className='text-xl md:text-2xl leading-relaxed text-center'>
-              There are 4 unique houses. Each Frog WorkHouse arms Froggers with the tools to unleash their skills. After every FrogChain Ops mission, they rest before striking again.
+              There are 4 unique houses. Each Frog WorkHouse arms Froggers with
+              the tools to unleash their skills. After every FrogChain Ops
+              mission, they rest before striking again.
             </p>
           </div>
           <div className='grid md:grid-cols-2 gap-8'>
@@ -417,7 +430,8 @@ const floatingAccessories = [
           </h2>
           <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
             <p className='text-xl md:text-2xl leading-relaxed text-center'>
-              Three game modes are hopping into FrogHacks—stay tuned to uncover what’s coming.
+              Three game modes are hopping into FrogHacks—stay tuned to uncover
+              what’s coming.
             </p>
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -433,10 +447,10 @@ const floatingAccessories = [
                         mode.name === 'FROGOPS'
                           ? '/frogopsfin.png'
                           : mode.name === 'FROGFORGE'
-                            ? '/frogforge.png'
-                            : mode.name === 'HACK RUSH'
-                              ? '/hackrushfi.png'
-                              : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${mode.name} gaming mode cyberpunk frog hacker interface`
+                          ? '/frogforge.png'
+                          : mode.name === 'HACK RUSH'
+                          ? '/hackrushfi.png'
+                          : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${mode.name} gaming mode cyberpunk frog hacker interface`
                       }
                       alt={mode.name}
                       width={30}
