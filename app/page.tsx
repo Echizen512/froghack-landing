@@ -9,7 +9,6 @@ import { CharacterSection } from '@/components/CharacterSection';
 
 export default function FrogHackLanding() {
   //states
-  const [currentCharacter, setCurrentCharacter] = useState(0);
   const [glitchText, setGlitchText] = useState('FROGHACK');
 
   const characters = [
@@ -69,13 +68,6 @@ export default function FrogHackLanding() {
   const handleDressUp = () => {
     setIsDressed(true);
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCharacter((prev) => (prev + 1) % characters.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const glitchInterval = setInterval(() => {
@@ -211,6 +203,7 @@ export default function FrogHackLanding() {
                     {/* Accesorios flotantes */}
                     {floatingAccessories.map((acc) => (
                       <Image
+                        key={acc.name}
                         src={acc.image}
                         alt={acc.name}
                         height={70}
