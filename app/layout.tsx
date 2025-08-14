@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'FrogHack - Blockchain Hacking Game',
   description:
     'Blockchain hacking game where you build elite teams of hacker frogs to dominate the metaverse.',
+  icons: {
+    icon: '/Logo.png', 
+  },
 };
 
 const pixelFont = localFont({
