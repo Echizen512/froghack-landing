@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import MatrixRain from '@/components/matrix-rain';
-
+import Image from 'next/image';
 export default function FrogHackLanding() {
   const [currentCharacter, setCurrentCharacter] = useState(0);
   const [glitchText, setGlitchText] = useState('FROGHACK');
@@ -71,10 +71,15 @@ export default function FrogHackLanding() {
       <section className='relative z-10 min-h-screen flex items-center justify-center px-4'>
         <div className='text-center max-w-4xl mx-auto'>
           <div className='mb-4'>
-            <img
+            <Image
               src='/Logo.png'
               alt='FrogHack Logo'
               className='mx-auto w-32 h-32 animate-pulse'
+              width={50}
+              height={50}
+              style={{
+                imageRendering: 'pixelated',
+              }}
             />
           </div>
 
@@ -131,7 +136,10 @@ export default function FrogHackLanding() {
                           : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
                       }
                       alt={char.name}
-                      className='w-full h-48 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
+                      style={{
+                        imageRendering: 'pixelated',
+                      }}
+                      className='w-full h-48 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400'
                     />
                   </div>
                   <h3 className='text-2xl font-bold mb-2 text-green-400'>
