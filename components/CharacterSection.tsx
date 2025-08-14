@@ -43,7 +43,7 @@ export const CharacterSection: React.FC = () => {
   const [currentCharacterID, setCurrentCharacterID] = useState<number>(0);
 
   return (
-    <section className='flex flex-col mx-auto p-2 md:p-6 mb-12 max-w-[1000px]'>
+    <section className='flex flex-col mx-auto p-2 md:p-6 lg:p-8 mb-12 max-w-6xl'>
       <div className='max-w-6xl mx-auto'>
         <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
           FRO<span className='text-green-400'>GGER</span>
@@ -56,7 +56,8 @@ export const CharacterSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <article className='flex flex-row h-[300px] md:gap-5'>
+
+      <article className='flex flex-col md:flex-row h-[300px] md:gap-5 relative justify-center'>
         <Card
           className={`bg-black/80 border-2 flex-1 transition-all duration-500 rounded-xl ${
             currentCharacterID === 2 || currentCharacterID == 0
@@ -65,7 +66,7 @@ export const CharacterSection: React.FC = () => {
           }`}
         >
           <CardContent className='p-6 h-full flex justify-center items-center flex-col'>
-            <div className='mb-4 relative overflow-hidden rounded-xl'></div>
+            <div className='mb-4 relative overflow-hidden rounded-xl' />
             <h3 className='text-2xl font-bold mb-2 text-green-400'>
               {characters[currentCharacterID].name}
             </h3>
@@ -78,25 +79,28 @@ export const CharacterSection: React.FC = () => {
         </Card>
 
         <Swiper
-          className=' flex-1'
-          // spaceBetween={50}
+          className='flex-1'
           slidesPerView={1}
           onSlideChange={(swiper) => {
             const i = swiper.realIndex;
             setCurrentCharacterID(i);
-            console.log('imagePath actual:', characters[i]?.imagePath);
-            console.log(currentCharacterID);
           }}
-          onSwiper={(swiper) => console.log(swiper)}
           pagination={{ clickable: true }}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           navigation
           scrollbar={{ draggable: true }}
           loop={true}
         >
-          {characters.map((char, index) => (
+          {characters.map((char) => (
             <SwiperSlide>
-              <Image src={char.imagePath} fill={true} alt={char.name} />
+              <div className='flex justify-center items-center w-full h-56'>
+                <Image
+                  src={char.imagePath}
+                  alt={char.name}
+                  fill={true}
+                  className='object-contain'
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

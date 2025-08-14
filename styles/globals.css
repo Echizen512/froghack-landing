@@ -38,9 +38,6 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* custom vars  */
-  --swiper-navigation-color: #05df72 !important;
-  --swiper-theme-color: #05df72 !important;
 }
 
 .dark {
@@ -124,9 +121,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-:root .swiper-button-prev,
-:root .swiper-button-next {
-  color: #05df72 !important;
 }
