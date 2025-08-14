@@ -164,6 +164,7 @@ export default function FrogHackLanding() {
                     src='/Inflitration.gif'
                     alt='House 1 - Node Infiltration'
                     className='w-full h-48 object-fill border-2 border-blue-400 rounded-xl'
+                    loading='lazy'
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-blue-400'>
@@ -184,6 +185,7 @@ export default function FrogHackLanding() {
                     src='/Disruption.gif'
                     alt='House 2 - Signal Disruption'
                     className='w-full h-48 object-fill border-2 border-yellow-400 rounded-xl'
+                    loading='lazy'
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-yellow-400'>
@@ -203,6 +205,7 @@ export default function FrogHackLanding() {
                     src='/Code.gif'
                     alt='House 3 - Code Decryption'
                     className='w-full h-48 object-fill border-2 border-green-400 rounded-xl'
+                    loading='lazy'
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-green-400'>
@@ -222,6 +225,7 @@ export default function FrogHackLanding() {
                     src='/Virus.gif'
                     alt='House 4 - Virus Installation'
                     className='w-full h-48 object-fill border-2 border-red-400 rounded-xl'
+                    loading='lazy'
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-red-400'>
