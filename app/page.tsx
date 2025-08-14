@@ -121,7 +121,7 @@ export default function FrogHackLanding() {
                         : char.name === "FrogBit"
                         ? "/frogbit.png"
                         : char.name === "FrogGrammer"
-                        ? "/froggrammer.png"
+                        ? "/FrogGrammer.png"
                         : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
                       }
                       alt={char.name}
@@ -154,7 +154,7 @@ export default function FrogHackLanding() {
                 <div className="mb-6 relative overflow-hidden rounded-xl">
                   <img
                     src="/Inflitration.gif"
-                    alt="Casa 1 - Infiltrar Nodo"
+                    alt="House 1 - Node Infiltration"
                     className="w-full h-48 object-fill border-2 border-blue-400 rounded-xl"
                   />
                 </div>
@@ -170,7 +170,7 @@ export default function FrogHackLanding() {
                 <div className="mb-6 relative overflow-hidden rounded-xl">
                   <img
                     src="/Disruption.gif"
-                    alt="Casa 2 - Interrumpir Señal"
+                    alt="House 2 - Signal Disruption"
                     className="w-full h-48 object-fill border-2 border-yellow-400 rounded-xl"
                   />
                 </div>
@@ -185,9 +185,9 @@ export default function FrogHackLanding() {
               <CardContent className="p-8">
                 <div className="mb-6 relative overflow-hidden rounded-xl">
                   <img
-                    src="/cyberpunk-decryption-lab.png"
-                    alt="Casa 3 - Descifrar Código"
-                    className="w-full h-48 object-cover border-2 border-green-400 rounded-xl"
+                    src="/Code.gif"
+                    alt="House 3 - Code Decryption"
+                    className="w-full h-48 object-fill border-2 border-green-400 rounded-xl"
                   />
                 </div>
                 <h3 className="text-2xl font-mono font-bold mb-4 text-green-400">Code Decryption</h3>
@@ -202,7 +202,7 @@ export default function FrogHackLanding() {
                 <div className="mb-6 relative overflow-hidden rounded-xl">
                   <img
                     src="/Virus.gif"
-                    alt="Casa 4 - Instalación de Virus"
+                    alt="House 4 - Virus Installation"
                     className="w-full h-48 object-fill border-2 border-red-400 rounded-xl"
                   />
                 </div>
