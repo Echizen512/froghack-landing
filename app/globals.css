@@ -134,6 +134,45 @@
   }
 }
 
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.floating-accessory {
+  position: absolute;
+  width: clamp(120px, 20vw, 240px); 
+  z-index: 2;
+  pointer-events: none;
+}
+
+.frog-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.accessory-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientShift 10s ease infinite;

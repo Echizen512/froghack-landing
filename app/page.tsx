@@ -53,7 +53,21 @@ export default function FrogHackLanding() {
     },
   ];
 
+const [isDressed, setIsDressed] = useState(false);
 
+
+const floatingAccessories = [
+  { name: 'Mask', image: '/Mask2.png', top: '10%', left: '75%' },    
+  { name: 'Cape', image: '/Capes.png', top: '10%', left: '-15%' },   
+  { name: 'Boots', image: '/Boots.png', top: '80%', left: '-15%' },  
+  { name: 'Cell', image: '/Cell.png', top: '70%', left: '75%' },   
+  { name: 'Pants', image: '/Pants.png', top: '40%', left: '80%' }, 
+];
+
+
+  const handleDressUp = () => {
+    setIsDressed(true);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -180,49 +194,115 @@ export default function FrogHackLanding() {
 
       {/* Accessories Section */}
       <section className='relative z-10 py-2 px-4'>
-        <div className='max-w-6xl mx-auto'>
-          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
-            ACCE<span className='text-green-400'>SSORIES</span>
-          </h2>
-          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
-            <p className='text-xl md:text-2xl leading-relaxed text-center'>
-              Each Frogger wields a custom arsenal—dark-piercing visors, viral cores that disrupt entire networks. Their gear is the line between failure and the perfect hack.
-            </p>
-          </div>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {accessories.map((item, index) => (
-              <Card
-                key={item.name}
-                className='bg-black/80 border-2 border-green-400 hover:border-cyan-400 hover:scale-105 transition-all duration-300 cursor-pointer rounded-xl'
-              >
-                <CardContent className='p-6 text-center'>
-                  <div className='mb-4 relative overflow-hidden rounded-xl'>
-                    <Image
-                      src={
-                        item.name === 'Masks'
-                          ? '/Masks.png'
-                          : item.name === 'Capes'
-                            ? '/Capes.png'
-                            : item.name === 'Boots'
-                              ? '/Boots.png'
-                              : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${item.name} frog accessory cyberpunk style`
-                      }
-                      alt={item.name}
-                      width={30}
-                      height={30}
-                      className='w-full h-32 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
-                    />
-                  </div>
-                  <h3 className='text-xl font-bold mb-3 text-green-400'>
-                    {item.name}
-                  </h3>
-                  <p className='text-green-300'>{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <div className='max-w-6xl mx-auto'>
+        <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
+          ACCE<span className='text-green-400'>SSORIES</span>
+        </h2>
+        <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
+          <p className='text-xl md:text-2xl leading-relaxed text-center'>
+            Each Frogger wields a custom arsenal—dark-piercing visors, viral cores that disrupt entire networks. Their gear is the line between failure and the perfect hack.
+          </p>
         </div>
-      </section>
+
+        {/* Grid de accesorios */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {accessories.map((item) => (
+            <Card
+              key={item.name}
+              className='bg-black/80 border-2 border-green-400 hover:border-cyan-400 hover:scale-105 transition-all duration-300 cursor-pointer rounded-xl'
+            >
+              <CardContent className='p-6 text-center'>
+                <div className='mb-4 relative overflow-hidden rounded-xl'>
+                  <Image
+                    src={
+                      item.name === 'Masks'
+                        ? '/Masks.png'
+                        : item.name === 'Capes'
+                          ? '/Capes.png'
+                          : item.name === 'Boots'
+                            ? '/Boots.png'
+                            : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${item.name} frog accessory cyberpunk style`
+                    }
+                    alt={item.name}
+                    width={30}
+                    height={30}
+                    className='w-full h-32 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
+                  />
+                </div>
+                <h3 className='text-xl font-bold mb-3 text-green-400'>
+                  {item.name}
+                </h3>
+                <p className='text-green-300'>{item.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+       <>
+      {/* Mini juego de vestir */}
+      <div className='mt-16 p-6 bg-black/60 border border-green-400 rounded-xl text-center'>
+        <h3 className='text-3xl font-bold text-green-400 mb-4'>Dress Your Frog</h3>
+        <p className='text-green-300 mb-6'>
+          Choose your gear. Watch your frog transform in real time.
+        </p>
+
+        {/* Rana base */}
+        <div className='relative w-64 h-64 mx-auto mb-6'>
+          {!isDressed ? (
+            <>
+              <Image
+                src='/base.png'
+                alt='Base Frog'
+                fill
+                className='object-contain z-0'
+              />
+
+              {/* Accesorios flotantes */}
+              {floatingAccessories.map((acc) => (
+                <Image
+                  key={acc.name}
+                  src={acc.image}
+                  alt={acc.name}
+                  width={100}
+                  height={100}
+                  className='absolute animate-float transition-opacity duration-500'
+                  style={{
+                    top: acc.top,
+                    left: acc.left,
+                  }}
+                />
+              ))}
+            </>
+          ) : (
+            <Image
+              src='/frog-equipped.png'
+              alt='Equipped Frog'
+              fill
+              className='object-contain z-10'
+            />
+          )}
+        </div>
+
+        {/* Botones */}
+        {!isDressed ? (
+          <button
+            onClick={handleDressUp}
+            className='px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-cyan-400 transition-colors'
+          >
+            Equip Accessories
+          </button>
+        ) : (
+          <button
+            onClick={() => setIsDressed(false)}
+            className='px-6 py-2 bg-cyan-400 text-black font-bold rounded hover:bg-green-400 transition-colors'
+          >
+            Unequip Accessories
+          </button>
+        )}
+      </div>
+    </>
+    </div>
+    </section>
 
 
       {/* Houses Section */}
