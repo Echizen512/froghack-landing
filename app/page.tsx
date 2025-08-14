@@ -58,7 +58,7 @@ const [isDressed, setIsDressed] = useState(false);
 
 const floatingAccessories = [
   { name: 'Mask', image: '/Mask2.png', top: '10%', left: '75%' },    
-  { name: 'Cape', image: '/Capes.png', top: '10%', left: '-20%' },   
+  { name: 'Cape', image: '/Capes.png', top: '10%', left: '-15%' },   
   { name: 'Boots', image: '/Boots.png', top: '80%', left: '-15%' },  
   { name: 'Cell', image: '/Cell.png', top: '70%', left: '75%' },   
   { name: 'Pants', image: '/Pants.png', top: '40%', left: '80%' }, 
