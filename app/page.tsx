@@ -211,10 +211,10 @@ export default function FrogHackLanding() {
                     {/* Accesorios flotantes */}
                     {floatingAccessories.map((acc) => (
                       <Image
-                        key={acc.name}
                         src={acc.image}
                         alt={acc.name}
-                        fill={true}
+                        height={70}
+                        width={70}
                         className='absolute animate-float transition-opacity duration-500'
                         style={{
                           top: acc.top,
