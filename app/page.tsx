@@ -38,6 +38,23 @@ export default function FrogHackLanding() {
     { name: 'HACK RUSH', description: 'Inflitrate, Exploit, Escape' },
   ];
 
+  const accessories = [
+    {
+      name: 'Masks',
+      description: 'Identity-shifting visors for stealth and style.',
+    },
+    {
+      name: 'Capes',
+      description: 'Reactive cloaks that shimmer with movement.',
+    },
+    {
+      name: 'Boots',
+      description: 'High-tech soles built for speed and silence.',
+    },
+  ];
+
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCharacter((prev) => (prev + 1) % characters.length);
@@ -91,35 +108,37 @@ export default function FrogHackLanding() {
 
           <div className='mb-8 p-6 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
             <p className='text-xl md:text-2xl leading-relaxed'>
-              Froghack is a next-gen game merging P2E and idle mechanics in a
-              world ruled by the fearsome frogs of the Frogchain.
+              FrogHack is next-gen gaming: P2E and idle merged into one ecosystem. On the FrogChain, frogs reign with power and mystery.
             </p>
           </div>
 
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <Button className='bg-gradient-to-r from-green-500 to-green-800 text-white font-bold text-xl px-8 py-4 hover:scale-105 transition-transform animate-pulse'>
-              Play
+              Coming Soon...
             </Button>
           </div>
         </div>
       </section>
 
       {/* Characters Section */}
-      <section className='relative z-10 py-2 px-4'>
+      <section className='relative z-10 py-2 px-4 mb-12'>
         <div className='max-w-6xl mx-auto'>
-          <h2 className='text-6xl md:text-8xl font-bold text-center mb-16 text-white tracking-[0.5px]'>
+          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
             FRO<span className='text-green-400'>GGER</span>
           </h2>
-
+          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
+            <p className='text-xl md:text-2xl leading-relaxed text-center'>
+              Four specialists. One deadly mission. Masters of infiltration, signal sabotage, decryption, and viral warfare—they're FrogHack’s most feared unit. And they're ready to strike.
+            </p>
+          </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {characters.map((char, index) => (
               <Card
                 key={char.name}
-                className={`bg-black/80 border-2 transition-all duration-500 hover:scale-105 cursor-pointer rounded-xl ${
-                  index === currentCharacter
-                    ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
-                    : 'border-green-400 hover:border-cyan-400'
-                }`}
+                className={`bg-black/80 border-2 transition-all duration-500 hover:scale-105 cursor-pointer rounded-xl ${index === currentCharacter
+                  ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
+                  : 'border-green-400 hover:border-cyan-400'
+                  }`}
               >
                 <CardContent className='p-6 text-center'>
                   <div className='mb-4 relative overflow-hidden rounded-xl'>
@@ -128,12 +147,12 @@ export default function FrogHackLanding() {
                         char.name === 'FrogPhantom'
                           ? '/phantomll.png'
                           : char.name === 'FrogRoot'
-                          ? '/frogroott.png'
-                          : char.name === 'FrogBit'
-                          ? '/frogbit.png'
-                          : char.name === 'FrogGrammer'
-                          ? '/FrogGrammer.png'
-                          : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
+                            ? '/frogroott.png'
+                            : char.name === 'FrogBit'
+                              ? '/frogbit.png'
+                              : char.name === 'FrogGrammer'
+                                ? '/FrogGrammer.png'
+                                : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
                       }
                       alt={char.name}
                       style={{
@@ -159,13 +178,64 @@ export default function FrogHackLanding() {
         </div>
       </section>
 
+      {/* Accessories Section */}
+      <section className='relative z-10 py-2 px-4'>
+        <div className='max-w-6xl mx-auto'>
+          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
+            ACCE<span className='text-green-400'>SSORIES</span>
+          </h2>
+          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
+            <p className='text-xl md:text-2xl leading-relaxed text-center'>
+              Each Frogger wields a custom arsenal—dark-piercing visors, viral cores that disrupt entire networks. Their gear is the line between failure and the perfect hack.
+            </p>
+          </div>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {accessories.map((item, index) => (
+              <Card
+                key={item.name}
+                className='bg-black/80 border-2 border-green-400 hover:border-cyan-400 hover:scale-105 transition-all duration-300 cursor-pointer rounded-xl'
+              >
+                <CardContent className='p-6 text-center'>
+                  <div className='mb-4 relative overflow-hidden rounded-xl'>
+                    <Image
+                      src={
+                        item.name === 'Masks'
+                          ? '/Masks.png'
+                          : item.name === 'Capes'
+                            ? '/Capes.png'
+                            : item.name === 'Boots'
+                              ? '/Boots.png'
+                              : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${item.name} frog accessory cyberpunk style`
+                      }
+                      alt={item.name}
+                      width={30}
+                      height={30}
+                      className='w-full h-32 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
+                    />
+                  </div>
+                  <h3 className='text-xl font-bold mb-3 text-green-400'>
+                    {item.name}
+                  </h3>
+                  <p className='text-green-300'>{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Houses Section */}
       <section className='relative z-10 py-20 px-4'>
         <div className='max-w-6xl mx-auto'>
-          <h2 className='text-6xl md:text-8xl font-bold text-center mb-16 text-white tracking-tight'>
+          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-tight'>
             FROG<span className='text-green-400'> HOUSES</span>
           </h2>
-
+          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
+            <p className='text-xl md:text-2xl leading-relaxed text-center'>
+              There are 4 unique houses. Each Frog WorkHouse arms Froggers with the tools to unleash their skills. After every FrogChain Ops mission, they rest before striking again.
+            </p>
+          </div>
           <div className='grid md:grid-cols-2 gap-8'>
             <Card className='bg-black/80 border-2 border-blue-400 hover:shadow-lg hover:shadow-blue-400/50 transition-all rounded-xl'>
               <CardContent className='p-8'>
@@ -262,10 +332,14 @@ export default function FrogHackLanding() {
       {/* Game Modes Section */}
       <section className='relative z-10 py-2 px-4 mb-12'>
         <div className='max-w-6xl mx-auto mb-12'>
-          <h2 className='text-6xl md:text-8xl font-bold text-center mb-16 text-white tracking-[0.5px]'>
+          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
             GAME<span className='text-green-400'> MODES</span>
           </h2>
-
+          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
+            <p className='text-xl md:text-2xl leading-relaxed text-center'>
+              Three game modes are hopping into FrogHacks—stay tuned to uncover what’s coming.
+            </p>
+          </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {gameModes.map((mode, index) => (
               <Card
@@ -279,10 +353,10 @@ export default function FrogHackLanding() {
                         mode.name === 'FROGOPS'
                           ? '/frogopsfin.png'
                           : mode.name === 'FROGFORGE'
-                          ? '/frogforge.png'
-                          : mode.name === 'HACK RUSH'
-                          ? '/hackrushfi.png'
-                          : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${mode.name} gaming mode cyberpunk frog hacker interface`
+                            ? '/frogforge.png'
+                            : mode.name === 'HACK RUSH'
+                              ? '/hackrushfi.png'
+                              : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${mode.name} gaming mode cyberpunk frog hacker interface`
                       }
                       alt={mode.name}
                       width={30}
