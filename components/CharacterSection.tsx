@@ -43,7 +43,7 @@ export const CharacterSection: React.FC = () => {
   const [currentCharacterID, setCurrentCharacterID] = useState<number>(0);
 
   return (
-    <section className='flex flex-col p-2 md:p-6 mb-12'>
+    <section className='flex flex-col mx-auto p-2 md:p-6 mb-12 max-w-[1000px]'>
       <div className='max-w-6xl mx-auto'>
         <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
           FRO<span className='text-green-400'>GGER</span>
@@ -56,11 +56,10 @@ export const CharacterSection: React.FC = () => {
           </p>
         </div>
       </div>
-
       <article className='flex flex-row h-[300px] md:gap-5'>
         <Card
           className={`bg-black/80 border-2 flex-1 transition-all duration-500 rounded-xl ${
-            currentCharacterID === 2
+            currentCharacterID === 2 || currentCharacterID == 0
               ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
               : 'border-green-400 hover:border-cyan-400'
           }`}
@@ -86,7 +85,7 @@ export const CharacterSection: React.FC = () => {
             const i = swiper.realIndex;
             setCurrentCharacterID(i);
             console.log('imagePath actual:', characters[i]?.imagePath);
-            console.log(setCurrentCharacterID);
+            console.log(currentCharacterID);
           }}
           onSwiper={(swiper) => console.log(swiper)}
           pagination={{ clickable: true }}
@@ -102,6 +101,18 @@ export const CharacterSection: React.FC = () => {
           ))}
         </Swiper>
       </article>
+
+      {/* swiper override stlyes */}
+      <style jsx global>{`
+        :root {
+          --swiper-navigation-color: #05df72 !important;
+          --swiper-theme-color: #05df72 !important;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          color: #05df72;
+        }
+      `}</style>
     </section>
   );
 };

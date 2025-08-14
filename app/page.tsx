@@ -7,6 +7,8 @@ import MatrixRain from '@/components/matrix-rain';
 import Image from 'next/image';
 import { CharacterSection } from '@/components/CharacterSection';
 
+
+
 export default function FrogHackLanding() {
   //states
   const [currentCharacter, setCurrentCharacter] = useState(0);
@@ -139,7 +141,6 @@ export default function FrogHackLanding() {
       {/* Characters Section */}
       <CharacterSection />
 
-      
       {/* <section className='relative z-10 py-2 px-4 mb-12'>
         <div className='max-w-6xl mx-auto'>
           <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
