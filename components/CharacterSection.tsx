@@ -57,9 +57,9 @@ export const CharacterSection: React.FC = () => {
         </div>
       </div>
 
-      <article className='flex flex-col md:flex-row h-[300px] md:gap-5 relative justify-center'>
+      <article className='flex flex-col md:flex-row h-[500px] md:h-[300px] md:gap-5 relative justify-center'>
         <Card
-          className={`bg-black/80 border-2 flex-1 transition-all duration-500 rounded-xl ${
+          className={`bg-black/80 border-2 md:flex-1 transition-all duration-500 rounded-xl ${
             currentCharacterID === 2 || currentCharacterID == 0
               ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
               : 'border-green-400 hover:border-cyan-400'
@@ -77,9 +77,9 @@ export const CharacterSection: React.FC = () => {
             </div>
           </CardContent>
         </Card>
-
+        
         <Swiper
-          className='flex-1'
+          className='flex-2 md:flex-1 w-full'
           slidesPerView={1}
           onSlideChange={(swiper) => {
             const i = swiper.realIndex;
@@ -93,7 +93,7 @@ export const CharacterSection: React.FC = () => {
         >
           {characters.map((char) => (
             <SwiperSlide>
-              <div className='flex justify-center items-center w-full h-56'>
+              <div className='flex justify-center items-center'>
                 <Image
                   src={char.imagePath}
                   alt={char.name}
