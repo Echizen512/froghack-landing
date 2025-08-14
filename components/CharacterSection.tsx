@@ -57,7 +57,7 @@ export const CharacterSection: React.FC = () => {
         </div>
       </div>
 
-      <article className='flex flex-col md:flex-row h-[500px] md:h-[300px] md:gap-5 relative justify-center'>
+      <article className='flex flex-col md:flex-row h-[450px] md:h-[300px] md:gap-5 relative justify-center'>
         <Card
           className={`bg-black/80 border-2 md:flex-1 transition-all duration-500 rounded-xl ${
             currentCharacterID === 2 || currentCharacterID == 0
@@ -93,7 +93,7 @@ export const CharacterSection: React.FC = () => {
         >
           {characters.map((char) => (
             <SwiperSlide>
-              <div className='flex justify-center items-center'>
+              <div className='flex justify-center items-center relative h-full'>
                 <Image
                   src={char.imagePath}
                   alt={char.name}

@@ -7,8 +7,6 @@ import MatrixRain from '@/components/matrix-rain';
 import Image from 'next/image';
 import { CharacterSection } from '@/components/CharacterSection';
 
-
-
 export default function FrogHackLanding() {
   //states
   const [currentCharacter, setCurrentCharacter] = useState(0);
@@ -141,66 +139,6 @@ export default function FrogHackLanding() {
       {/* Characters Section */}
       <CharacterSection />
 
-      {/* <section className='relative z-10 py-2 px-4 mb-12'>
-        <div className='max-w-6xl mx-auto'>
-          <h2 className='text-6xl md:text-8xl font-bold text-center mb-4 text-white tracking-[0.5px]'>
-            FRO<span className='text-green-400'>GGER</span>
-          </h2>
-          <div className='mb-8 p-4 border border-green-400 bg-black/50 backdrop-blur-sm animate-pulse rounded-xl'>
-            <p className='text-xl md:text-2xl leading-relaxed text-center'>
-              Four specialists. One deadly mission. Masters of infiltration,
-              signal sabotage, decryption, and viral warfare—they're FrogHack’s
-              most feared unit. And they're ready to strike.
-            </p>
-          </div>
-          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
-            {characters.map((char, index) => (
-              <Card
-                key={char.name}
-                className={`bg-black/80 border-2 transition-all duration-500 hover:scale-105 cursor-pointer rounded-xl ${
-                  index === currentCharacter
-                    ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
-                    : 'border-green-400 hover:border-cyan-400'
-                }`}
-              >
-                <CardContent className='p-6 text-center'>
-                  <div className='mb-4 relative overflow-hidden rounded-xl'>
-                    <Image
-                      src={
-                        char.name === 'FrogPhantom'
-                          ? '/phantomll.png'
-                          : char.name === 'FrogRoot'
-                          ? '/frogroott.png'
-                          : char.name === 'FrogBit'
-                          ? '/frogbit.png'
-                          : char.name === 'FrogGrammer'
-                          ? '/FrogGrammer.png'
-                          : `/abstract-geometric-shapes.png?key=b6fpl&height=200&width=200&query=${char.name} frog hacker character cyberpunk style`
-                      }
-                      alt={char.name}
-                      style={{
-                        imageRendering: 'pixelated',
-                      }}
-                      width={30}
-                      height={30}
-                      className='w-full h-48 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400'
-                    />
-                  </div>
-                  <h3 className='text-2xl font-bold mb-2 text-green-400'>
-                    {char.name}
-                  </h3>
-                  <div
-                    className={`text-lg font-bold mb-3 bg-gradient-to-r ${char.color} bg-clip-text text-transparent`}
-                  >
-                    {char.skill}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Accessories Section */}
       <section className='relative z-10 py-2 px-4'>
         <div className='max-w-6xl mx-auto'>
@@ -276,8 +214,7 @@ export default function FrogHackLanding() {
                         key={acc.name}
                         src={acc.image}
                         alt={acc.name}
-                        width={100}
-                        height={100}
+                        fill={true}
                         className='absolute animate-float transition-opacity duration-500'
                         style={{
                           top: acc.top,
