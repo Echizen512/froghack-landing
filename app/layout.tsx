@@ -12,7 +12,6 @@ const pixelFont = localFont({
   src: './font/pixel.ttf',
 });
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,8 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className={pixelFont.className}>
-      <head></head>
-      <body>{children}</body>
+      <body
+        style={{
+          cursor: "url('/cursors/default.png') 0 0, auto",
+        }}
+      >
+        {children}
+      </body>
     </html>
   );
 }
