@@ -123,7 +123,7 @@ export default function FrogHackLanding() {
               >
                 <CardContent className='p-6 text-center'>
                   <div className='mb-4 relative overflow-hidden rounded-xl'>
-                    <img
+                    <Image
                       src={
                         char.name === 'FrogPhantom'
                           ? '/phantomll.png'
@@ -139,6 +139,8 @@ export default function FrogHackLanding() {
                       style={{
                         imageRendering: 'pixelated',
                       }}
+                      width={30}
+                      height={30}
                       className='w-full h-48 object-fill border-2 border-green-400 rounded-xl hover:border-cyan-400'
                     />
                   </div>
@@ -168,11 +170,13 @@ export default function FrogHackLanding() {
             <Card className='bg-black/80 border-2 border-blue-400 hover:shadow-lg hover:shadow-blue-400/50 transition-all rounded-xl'>
               <CardContent className='p-8'>
                 <div className='mb-6 relative overflow-hidden rounded-xl'>
-                  <img
+                  <Image
                     src='/Inflitration.gif'
                     alt='House 1 - Node Infiltration'
                     className='w-full h-48 object-fill border-2 border-blue-400 rounded-xl'
                     loading='lazy'
+                    width={30}
+                    height={30}
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-blue-400'>
@@ -189,11 +193,13 @@ export default function FrogHackLanding() {
             <Card className='bg-black/80 border-2 border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/50 transition-all rounded-xl'>
               <CardContent className='p-8'>
                 <div className='mb-6 relative overflow-hidden rounded-xl'>
-                  <img
+                  <Image
                     src='/Disruption.gif'
                     alt='House 2 - Signal Disruption'
                     className='w-full h-48 object-fill border-2 border-yellow-400 rounded-xl'
                     loading='lazy'
+                    width={30}
+                    height={30}
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-yellow-400'>
@@ -209,11 +215,13 @@ export default function FrogHackLanding() {
             <Card className='bg-black/80 border-2 border-green-400 hover:shadow-lg hover:shadow-green-400/50 transition-all rounded-xl'>
               <CardContent className='p-8'>
                 <div className='mb-6 relative overflow-hidden rounded-xl'>
-                  <img
+                  <Image
                     src='/Code.gif'
                     alt='House 3 - Code Decryption'
                     className='w-full h-48 object-fill border-2 border-green-400 rounded-xl'
                     loading='lazy'
+                    width={30}
+                    height={30}
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-green-400'>
@@ -229,11 +237,13 @@ export default function FrogHackLanding() {
             <Card className='bg-black/80 border-2 border-red-400 hover:shadow-lg hover:shadow-red-400/50 transition-all rounded-xl'>
               <CardContent className='p-8'>
                 <div className='mb-6 relative overflow-hidden rounded-xl'>
-                  <img
+                  <Image
                     src='/Virus.gif'
                     alt='House 4 - Virus Installation'
                     className='w-full h-48 object-fill border-2 border-red-400 rounded-xl'
                     loading='lazy'
+                    width={30}
+                    height={30}
                   />
                 </div>
                 <h3 className='text-2xl font-bold mb-4 text-red-400'>
@@ -264,7 +274,7 @@ export default function FrogHackLanding() {
               >
                 <CardContent className='p-6 text-center'>
                   <div className='mb-4 relative overflow-hidden rounded-xl'>
-                    <img
+                    <Image
                       src={
                         mode.name === 'FROGOPS'
                           ? '/frogopsfin.png'
@@ -275,6 +285,8 @@ export default function FrogHackLanding() {
                           : `/abstract-geometric-shapes.png?key=7wl17&height=200&width=200&query=${mode.name} gaming mode cyberpunk frog hacker interface`
                       }
                       alt={mode.name}
+                      width={30}
+                      height={30}
                       className='w-full h-32 object-cover border-2 border-green-400 rounded-xl hover:border-cyan-400 transition-colors'
                     />
                   </div>
