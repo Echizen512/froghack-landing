@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import MatrixRain from '@/components/matrix-rain';
 import Image from 'next/image';
 import { CharacterSection } from '@/components/CharacterSection';
+import { AccessoryMiniGame } from '@/components/AccessoryMiniGame';
 
 export default function FrogHackLanding() {
   //states
@@ -179,71 +180,9 @@ export default function FrogHackLanding() {
             ))}
           </div> */}
 
-          <>
-            {/* Mini juego de vestir */}
-            <div className='mt-16 p-6 bg-black/60 border border-green-400 rounded-xl text-center'>
-              <h3 className='text-3xl font-bold text-green-400 mb-4'>
-                Dress Your Frog
-              </h3>
-              <p className='text-green-300 mb-6'>
-                Choose your gear. Watch your frog transform in real time.
-              </p>
+          <AccessoryMiniGame />
 
-              {/* Rana base */}
-              <div className='relative w-64 h-64 mx-auto mb-6'>
-                {!isDressed ? (
-                  <>
-                    <Image
-                      src='/base.png'
-                      alt='Base Frog'
-                      fill
-                      className='object-contain z-0'
-                    />
-
-                    {/* Accesorios flotantes */}
-                    {floatingAccessories.map((acc) => (
-                      <Image
-                        key={acc.name}
-                        src={acc.image}
-                        alt={acc.name}
-                        height={70}
-                        width={70}
-                        className='absolute animate-float transition-opacity duration-500'
-                        style={{
-                          top: acc.top,
-                          left: acc.left,
-                        }}
-                      />
-                    ))}
-                  </>
-                ) : (
-                  <Image
-                    src='/frog-equipped.png'
-                    alt='Equipped Frog'
-                    fill
-                    className='object-contain z-10'
-                  />
-                )}
-              </div>
-
-              {/* Botones */}
-              {!isDressed ? (
-                <button
-                  onClick={handleDressUp}
-                  className='px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-cyan-400 transition-colors'
-                >
-                  Equip Accessories
-                </button>
-              ) : (
-                <button
-                  onClick={() => setIsDressed(false)}
-                  className='px-6 py-2 bg-cyan-400 text-black font-bold rounded hover:bg-green-400 transition-colors'
-                >
-                  Unequip Accessories
-                </button>
-              )}
-            </div>
-          </>
+          {/* Botón para vestir al personaje */}
         </div>
       </section>
 

@@ -17,26 +17,35 @@ const characters = [
     skill: 'Node Infiltration',
     color: 'from-blue-500 to-cyan-400',
     imagePath: '/phantomll.png',
+    description:
+      'Specialist in silent infiltration and detection evasion. Ideal for covert operations where remaining unnoticed is critical.',
   },
   {
     name: 'FrogRoot',
     skill: 'Signal Disruption',
     color: 'from-yellow-500 to-orange-400',
     imagePath: '/frogroott.png',
+    description:
+      'Master of network sabotage and communication blackouts. Capable of disabling critical systems with surgical precision.',
   },
   {
     name: 'FrogBit',
     skill: 'Code Decryption',
     color: 'from-green-500 to-emerald-400',
     imagePath: '/frogbit.png',
+    description:
+      'Expert in breaking encryption and analyzing complex smart contracts. His logic and precision make him indispensable for decryption tasks.',
   },
   {
     name: 'FrogGrammer',
     skill: 'Virus Installation',
     color: 'from-red-500 to-pink-400',
     imagePath: '/FrogGrammer.png',
+    description:
+      'Creator and infiltrator of liquidity-draining viruses. Penetrates financial systems to destabilize the network from within.',
   },
 ] as const;
+
 
 export const CharacterSection: React.FC = () => {
   //states
@@ -59,11 +68,10 @@ export const CharacterSection: React.FC = () => {
 
       <article className='flex flex-col md:flex-row h-[450px] md:h-[300px] md:gap-5 relative justify-center'>
         <Card
-          className={`bg-black/80 border-2 md:flex-1 transition-all duration-500 rounded-xl ${
-            currentCharacterID === 2 || currentCharacterID == 0
+          className={`bg-black/80 border-2 md:flex-1 transition-all duration-500 rounded-xl ${currentCharacterID === 2 || currentCharacterID == 0
               ? `border-cyan-400 shadow-lg shadow-cyan-400/50 animate-pulse`
               : 'border-green-400 hover:border-cyan-400'
-          }`}
+            }`}
         >
           <CardContent className='p-6 h-full flex justify-center items-center flex-col'>
             <div className='mb-4 relative overflow-hidden rounded-xl' />
@@ -75,9 +83,12 @@ export const CharacterSection: React.FC = () => {
             >
               {characters[currentCharacterID].skill}
             </div>
+            <p className='text-sm text-white text-center leading-snug mt-2 font-bold tracking-wide pixel-font'>
+              {characters[currentCharacterID].description}
+            </p>
           </CardContent>
         </Card>
-        
+
         <Swiper
           className='flex-2 md:flex-1 w-full'
           slidesPerView={1}
